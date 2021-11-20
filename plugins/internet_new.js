@@ -1,13 +1,15 @@
 const Bot = require('../modules/bot');
 const axios = require('axios').default;
+const process = require('process');
 
+console.log(process.env.tianapi_key)
 class Plugin extends Bot {
   constructor () {
     super();
     const url = 'http://api.tianapi.com/internet/index';
     this.API_KEY = process.env.tianapi_key;
     const pageNum = 20
-    this.API = `${url}?key=${this.API_key}&num=${pageNum}`;
+    this.API = `${url}?key=${this.API_KEY}&num=${pageNum}`;
     if (process.env.plug_disabled === 'true') this.exit();
   }
   async run () {

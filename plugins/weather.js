@@ -7,12 +7,14 @@ class Plugin extends Bot {
     super();
     this.url = 'http://api.tianapi.com/tianqi/index'
     this.API_KEY = process.env.tianapi_key
-    this.city = process.env.city || '北京'
-    this.API = `${this.url}?key=${this.API_KEY}?city=${this.city}`;
+    this.city = process.env.city || '北京市'
+    this.API = `${this.url}?key=${this.API_KEY}&city=${encodeURI(this.city)}`;
+    console.log(this.API)
   }
 
   async run () {
     await axios.get(this.API).then(res => {
+      console.log(res)
       if(res.data.code === 200) {
         this._sendData(res.data.newslist[0])
       }

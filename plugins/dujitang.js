@@ -1,12 +1,13 @@
 const Bot = require('../modules/bot');
 const axios = require('axios').default;
+const process = require('process');
 
 class Plugin extends Bot {
   constructor () {
     super();
     const url = 'http://api.tianapi.com/dujitang/index';
     this.API_KEY = process.env.tianapi_key;
-    this.API = `${url}?key=${key}`;
+    this.API = `${url}?key=${this.API_KEY}`;
     if (process.env.plug_disabled === 'true') this.exit();
   }
   run () {

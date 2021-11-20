@@ -5,6 +5,7 @@
 
 const Bot = require('../modules/bot');
 const axios = require('axios').default;
+const process = require('process');
 
 class Plugin extends Bot {
   constructor () {
