@@ -7,6 +7,9 @@ class Plugin extends Bot {
   constructor () {
     super();
   }
+  async run () {
+
+  }
 }
 
 new Plugin().run();
