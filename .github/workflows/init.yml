@@ -1,4 +1,4 @@
-name: 'GeekBot'
+name: 'Bot'
 
 on:
   push:

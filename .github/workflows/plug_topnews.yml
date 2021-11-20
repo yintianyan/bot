@@ -1,4 +1,4 @@
-name: '微擎信息提醒'
+name: '今日头条'
 
 on:
   watch:
