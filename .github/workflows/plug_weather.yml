@@ -1,4 +1,4 @@
-name: '彩云天气'
+name: '天气预报'
 
 on:
   watch:
