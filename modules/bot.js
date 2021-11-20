@@ -7,14 +7,12 @@ const FormData = require('form-data');
 class Bot {
   constructor () {
     // 企业微信机器人API地址
-    // const { bot_api } = process.env;
-    const bot_api = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4f4226b6-db23-4c60-b697-21714f26611e'
+    const { bot_api } = process.env;
     if (!bot_api) {
       console.log('[!] 请先设置企业微信群机器人webhook');
       return this.exit();
     }
-    // this.BOT_API = process.env.bot_api;
-    this.BOT_API = bot_api
+    this.BOT_API = process.env.bot_api;
     this.BOT_KEY = this.BOT_API.split('key=')[1];
   }
 
